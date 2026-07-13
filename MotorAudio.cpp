@@ -66,7 +66,7 @@ void MotorAudio::reproducir(){
  mciSendStringA("play musica", nullptr, 0, nullptr);   
 }
 void MotorAudio::pausar(){
- mciSendStringA("pause", nullptr, 0, nullptr);   
+ mciSendStringA("pause musica", nullptr, 0, nullptr);   
 }
 void MotorAudio::Continuar(){
  mciSendStringA("resume musica", nullptr, 0, nullptr);   
