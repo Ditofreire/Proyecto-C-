@@ -7,6 +7,8 @@
 int main (){
 
     MotorAudio motor;
-     if(motor.abrir())
+     if(motor.abrir("audio/cancion.mp3")){
+        motor.reproducir();
+     }
     return 0;
 }
