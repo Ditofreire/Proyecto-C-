@@ -25,6 +25,20 @@ std::string Audio::getRutaArchivo() const {
     return rutaArchivo;
 }
 
+FormatoAudio Audio::getFormato() const{
+    return formato;
+}
+
+std::string Audio::getFormatoTexto()const{
+    if(formato==FormatoAudio::WAV){
+        return "WAV";
+    }else if (formato==FormatoAudio::MP3){
+        return "MP3";
+    }else{
+        return "DESCONOCIDO";
+    }
+}
+
 void Audio::setTitulo(const std::string& nuevoTitulo) {
     //rechaza cadena vacía o solo espacios
     bool soloEspacios = true;

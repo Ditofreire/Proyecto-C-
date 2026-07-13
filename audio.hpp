@@ -4,6 +4,12 @@
 #include <iostream>
 #include <string>
 
+enum class FormatoAudio{
+    WAV,
+    MP3,
+    DESCONOCIDO
+};
+
 class Audio {
     protected: 
         int id; //sin setter
@@ -11,6 +17,7 @@ class Audio {
         int duracionSegundos;
         int reproducciones; //contador, solo se modifica desde reproducir()
         std::string rutaArchivo;
+        FormatoAudio formato;
 
         void reproducirArchivo() const; //cada clase derivada llama desde su propio reproducir
 
@@ -25,6 +32,9 @@ class Audio {
         int getReproducciones() const; 
         std::string getTitulo() const;
         std::string getRutaArchivo() const;
+        FormatoAudio getFormato() const;
+        std::string getFormatoTexto() const;
+
 
         //setters
         void setTitulo(const std::string& nuevoTitulo);
@@ -48,3 +58,28 @@ class Audio {
 };
 
 #endif
+
+
+/*
+######################Teoria############################
+///////////////Que es un .h o .hpp??????????
+Son archivos de cabezera. Ahi normalmente se declaran clases. El .hpp te dice que existe y el .cpp
+te dice como funciona.
+
+Convencion de sintaxis:
+.h----> C o C++
+.hpp--->c++
+
+/////////////Sobrecarga de operadores////////////////////////
+Sobrecargar un operador significa enseniarle a C++ como usar un operador con tus propios objetos
+Ejemplo: 
+        Mal: C++ no sabe como imprimir un Audio
+    Audio pista;
+    std::cout<<pista;
+        bien: difinirlos
+    std::ostream & operator<<(std::ostream & os, const Audio& audio)
+
+////////////enum class///////////////
+Genera un nuevo tipo de dato que puede guerdar solo las opciones internas.
+
+*/
