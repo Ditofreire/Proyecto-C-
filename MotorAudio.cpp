@@ -2,7 +2,7 @@
 #include <string>
 #include <windows.h>//header principal de la API Windows. Declara tipos y funciones que permiten comunicarse con el OS.
 #include <mmsystem.h> //Header antiguo dedicado a funciones multimedia, especialmente: .wav, Control de dispositivos, Temp multimedia, etc.
-
+#include<iostream>
 #pragma comment(lib,"winmm.lib") 
 /*
 pragma: Instruccion especial al compilador
@@ -22,16 +22,22 @@ MotorAudio::~MotorAudio(){
 } 
 
 bool MotorAudio::abrir(const std::string& rutaArchivo){
-    std::string comando = "open \""+rutaArchivo+"\" alias musica";
+    mciSendStringA("close musica", nullptr, 0, nullptr);
+    std::string comando = "open \""+rutaArchivo+"\" type mpegvideo alias musica";
     MCIERROR resultado = mciSendStringA(comando.c_str(), nullptr, 0, nullptr);
     if(resultado==0){
         archivoAbierto = true;
         return true;
-    }else{
+    } else {
+        char mensaje[256];
+
+        mciGetErrorStringA(resultado, mensaje, 256);
+
+        std::cout << "Error MCI: "<< mensaje << std::endl;
+
         archivoAbierto = false;
         return false;
     }
-
     /*############e'ta vaina e'ta potente#####################3
     ////////////////////////////Que es MCI? 
 MCI es Media Control Interface. Es una partee de Windows que permite controlar archivos multimedia usando instrucciones escritas como texto. En vez de programar directamente
