@@ -9,6 +9,9 @@
     "${workspaceFolder}\\main.cpp",
     "${workspaceFolder}\\MotorAudio.cpp",
     "${workspaceFolder}\\audio.cpp",
+    "${workspaceFolder}\\tiposAudio.cpp",
+    "${workspaceFolder}\\ListaReproduccion.cpp",
+    
     "-o",
     "${workspaceFolder}\\main.exe",
     "-lwinmm"
