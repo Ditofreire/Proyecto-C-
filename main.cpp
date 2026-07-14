@@ -1,14 +1,14 @@
 #include "ListaReproduccion.hpp"
 #include "MotorAudio.hpp"
 #include "tiposAudio.hpp"
-
+#include "GestorXML.hpp"
 #include <iostream>
 
 int main()
 {
     ListaReproduccion lista;
     MotorAudio motor;
-
+    GestorXML gestor;
     // Agregar pistas
     lista.agregarFinal(new CancionEstudio(
         1,
@@ -112,6 +112,22 @@ int main()
 
     std::cout << "\nLista actualizada:\n";
    lista.mostrar();
+
+if (gestor.guardar(lista, "biblioteca.xml")) {
+    std::cout << "Biblioteca guardada correctamente.\n";
+}
+else {
+    std::cout << "Error al guardar la biblioteca.\n";
+}
+ListaReproduccion listaCargada;
+
+if (gestor.cargar(listaCargada, "biblioteca.xml")) {
+    std::cout << "\nBiblioteca cargada desde XML:\n";
+    listaCargada.mostrar();
+}
+else {
+    std::cout << "Error al cargar el XML.\n";
+}
     return 0;
 }
 

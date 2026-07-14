@@ -63,7 +63,12 @@ void Audio::setDuracionSegundos(int segundos) {
 void Audio::setRutaArchivo(const std::string& nuevaRuta) {
     std::string extensionEsperada = formatoEsperado(); 
 }
-
+void Audio::setReproducciones(int cantidad)
+{
+    if (cantidad >= 0) {
+        reproducciones = cantidad;
+    }
+}
 void Audio::reproducirArchivo() const {}
 
 void Audio::registrarReproduccion()

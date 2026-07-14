@@ -34,6 +34,7 @@ public:
     Audio* obtenerActual();
     Audio* avanzar();
     Audio* retroceder();
+    NodoAudio* getPrimero() const;
 
     void mostrar() const;
     void vaciar();

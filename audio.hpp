@@ -40,7 +40,7 @@ class Audio {
         void setTitulo(const std::string& nuevoTitulo);
         void setDuracionSegundos(int segundos);
         void setRutaArchivo(const std::string& nuevaRuta);
-
+        void setReproducciones(int cantidad);
         //metodos
         virtual void reproducir() = 0;
         virtual std::string obtenerInfo() const = 0;

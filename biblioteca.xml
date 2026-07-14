@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<biblioteca>
+  <audio tipo="CANCION_ESTUDIO">
+    <id>1</id>
+    <titulo>Cancion uno</titulo>
+    <duracion>180</duracion>
+    <reproducciones>1</reproducciones>
+    <ruta>audio/prueba.wav</ruta>
+    <album>Album uno</album>
+    <productor>Productor uno</productor>
+  </audio>
+  <audio tipo="PODCAST">
+    <id>2</id>
+    <titulo>Podcast de prueba</titulo>
+    <duracion>600</duracion>
+    <reproducciones>1</reproducciones>
+    <ruta>audio/podcast.wav</ruta>
+    <invitado>Invitado uno</invitado>
+    <tema>Programacion</tema>
+  </audio>
+  <audio tipo="AUDIOLIBRO">
+    <id>3</id>
+    <titulo>Libro de prueba</titulo>
+    <duracion>1200</duracion>
+    <reproducciones>0</reproducciones>
+    <ruta>audio/libro.wav</ruta>
+    <narrador>Narrador uno</narrador>
+    <totalCapitulos>10</totalCapitulos>
+  </audio>
+</biblioteca>

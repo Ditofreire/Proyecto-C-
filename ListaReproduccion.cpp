@@ -67,6 +67,10 @@ Audio* ListaReproduccion::retroceder()
 
     return actual->pista;
 }
+NodoAudio* ListaReproduccion::getPrimero() const
+{
+    return primero;
+}
 void ListaReproduccion::mostrar() const
 {
     if (primero == nullptr) {
