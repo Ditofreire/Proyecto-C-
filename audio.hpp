@@ -47,7 +47,7 @@ class Audio {
         virtual std:: string tipo() const = 0;
         virtual std::string serializar() const = 0; //para guardar en un .txt
         virtual std::string formatoEsperado() const = 0; // formato de archivo
-
+        void registrarReproduccion();
         //friend(no es virtual): una funcion friend no es miembro de la clase pero tiene acceso a los atributos privados y protegidos de una clase. convecnion en cualquier tipo de sobrecarga de <<
         //sobrecarga del operador<<. un cout normal no funciona (no sobria como hacerlo imprimible ). 
         //Con operator<<, le estamos diciendo exacatemente que hacer cuando el lado derecho es un objeto. 

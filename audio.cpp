@@ -66,6 +66,11 @@ void Audio::setRutaArchivo(const std::string& nuevaRuta) {
 
 void Audio::reproducirArchivo() const {}
 
+void Audio::registrarReproduccion()
+{
+    reproducciones++;
+}
+
 std::ostream& operator<<(std::ostream& os, const Audio& a) {
     //como friend no es virtual, el operador llama a obtenerInfo que si es virtual para que si cambie dependiendo del obejto hijo
     os << a.obtenerInfo();
